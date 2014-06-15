@@ -1,0 +1,59 @@
+---
+title       : Representation of power functions
+subtitle    : A visual guide to integer power functions
+author      : by Amperio, 2014-06-16
+logo        : ./img/logoAMP.png
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : [mathjax]     # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+---
+
+## Purpose of the application
+
+1. First and foremost, this application was written by this author to learn a bit of Shiny
+2. Then, I must admit that getting the Course Project done is also very important
+3. Finally, I hope that the application is also useful to show the kids the look of some simple power functions, haveing them play with the display parameters
+
+--- .class #id 
+
+## Application usage: Access
+
+The application is available (provided that the shinyapps.io server is up) at the following URL:
+
+<a href="https://www.shinyapps.io/applications/12412">https://www.shinyapps.io/applications/12412</a> <span style="color: #f00;">(URL pending update when the server allows uploading files)</span>
+
+The application code is available via github in the following public repo:
+
+<a href="https://github.com/doubleamp/DevDataProd-CourseProject">https://github.com/doubleamp/DevDataProd-CourseProject</a>
+
+--- .class #id
+
+## Application usage: Main parameters
+
+In the left side of the app there are a number of controls for the plot that is displayed in the right side of the app. The ones that control the function being plotted are:
+
+1. The power of the function is a numeric input box that allows setting the power of the function being represented; that is, the order of the function $y = x^N$. The box allows presenting power functions from N = -25 to N = 25. Please note that N = 0 equals to a constant function (y = 1), while N = 1 equals the linear function y = x.
+2. The interval where the functions is to be plotted can be selected with two slider controls, that range from -100 to 100. Please note that the function will always be plotted from the minimum of the two values to the maximum, and that it will take care of not plotting singularities when the interval contains the value 0 and the power N is negative:
+
+```{r eval=FALSE}
+lower_end <- min(input$int_ini, input$int_end)
+upper_end <- max(input$int_ini, input$int_end)
+...
+if ((input$fun_power < 0) && (lower_end <= 0)) {
+   interval[which(interval==0)] = 0.0001}
+```
+
+--- .class #id
+
+## Application usage: Other adjustments
+
+In the lower side of the left controls of the app there are a number of options for the rendering of the plot:
+
+1. The colour of the plotted function
+2. The position (X and Y coordinates) of the label informing of the plotted function
+
+I hope you enjoy this little app!
+
+

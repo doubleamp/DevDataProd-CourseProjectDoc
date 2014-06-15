@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Representation of power functions</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Representation of power functions">
+  <meta name="author" content="by Amperio, 2014-06-16">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <aside class="gdbar">
+    <img src="assets/img/./img/logoAMP.png">
+  </aside>
+  <hgroup class="auto-fadein">
+    <h1>Representation of power functions</h1>
+    <h2>A visual guide to integer power functions</h2>
+    <p>by Amperio, 2014-06-16<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Purpose of the application</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>First and foremost, this application was written by this author to learn a bit of Shiny</li>
+<li>Then, I must admit that getting the Course Project done is also very important</li>
+<li>Finally, I hope that the application is also useful to show the kids the look of some simple power functions, haveing them play with the display parameters</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Application usage: Access</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The application is available (provided that the shinyapps.io server is up) at the following URL:</p>
+
+<p><a href="https://www.shinyapps.io/applications/12412"><a href="https://www.shinyapps.io/applications/12412">https://www.shinyapps.io/applications/12412</a></a> <span style="color: #f00;">(URL pending update when the server allows uploading files)</span></p>
+
+<p>The application code is available via github in the following public repo:</p>
+
+<p><a href="https://github.com/doubleamp/DevDataProd-CourseProject"><a href="https://github.com/doubleamp/DevDataProd-CourseProject">https://github.com/doubleamp/DevDataProd-CourseProject</a></a></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Application usage: Main parameters</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In the left side of the app there are a number of controls for the plot that is displayed in the right side of the app. The ones that control the function being plotted are:</p>
+
+<ol>
+<li>The power of the function is a numeric input box that allows setting the power of the function being represented; that is, the order of the function \(y = x^N\). The box allows presenting power functions from N = -25 to N = 25. Please note that N = 0 equals to a constant function (y = 1), while N = 1 equals the linear function y = x.</li>
+<li>The interval where the functions is to be plotted can be selected with two slider controls, that range from -100 to 100. Please note that the function will always be plotted from the minimum of the two values to the maximum, and that it will take care of not plotting singularities when the interval contains the value 0 and the power N is negative:</li>
+</ol>
+
+<pre><code class="r">lower_end &lt;- min(input$int_ini, input$int_end)
+upper_end &lt;- max(input$int_ini, input$int_end)
+...
+if ((input$fun_power &lt; 0) &amp;&amp; (lower_end &lt;= 0)) {
+   interval[which(interval==0)] = 0.0001}
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Application usage: Other adjustments</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>In the lower side of the left controls of the app there are a number of options for the rendering of the plot:</p>
+
+<ol>
+<li>The colour of the plotted function</li>
+<li>The position (X and Y coordinates) of the label informing of the plotted function</li>
+</ol>
+
+<p>I hope you enjoy this little app!</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Purpose of the application'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Application usage: Access'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Application usage: Main parameters'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Application usage: Other adjustments'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
