@@ -2,7 +2,6 @@
 title       : Representation of power functions
 subtitle    : A visual guide to integer power functions
 author      : by Amperio, 2014-06-16
-logo        : ./img/logoAMP.png
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
 hitheme     : tomorrow      # 
