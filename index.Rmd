@@ -21,7 +21,7 @@ mode        : selfcontained # {standalone, draft}
 
 The application is available (provided that the shinyapps.io server is up) at the following URL:
 
-<a href="https://www.shinyapps.io/applications/12412">https://www.shinyapps.io/applications/12412</a> <span style="color: #f00;">(URL pending update when the server allows uploading files)</span>
+<a href="https://doubleamp.shinyapps.io/shiny-app/">https://doubleamp.shinyapps.io/shiny-app/</a>
 
 The application code is available via github in the following public repo:
 
